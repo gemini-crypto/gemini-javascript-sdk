@@ -1,0 +1,44 @@
+<html>
+
+<head>
+	<script src="js/build.js"></script>
+	<script src="js/ethereumjs-util.js"></script>
+	<script src="js/sjcl-bip39.js"></script>
+	<script src="js/wordlist_english.js"></script>
+	<script src="js/jsbip39.js"></script>
+	<script src="js/bitcoinjs-3.3.2.js"></script>
+	
+	<script>
+		function create(){
+		
+			var res =newAddress("test test test test test test test test test test test good")
+			console.log("..."+res)
+			
+			
+			var res_1 =importPriKey("11111111f1875dbb78b6c31798a9e86aa9de23970e7bb9566f711d2b47d7a79c")
+			console.log("......"+res_1)
+			
+			var fromaddr=""
+			var toaddr=""
+			var contractAddress=""				
+			var amount=6000000					
+			var fee=100000						
+			var nonce=""				
+			var remark=""
+			var pri=""							
+			var pub=""							
+		    var res_2 =transactionSignature(fromaddr, toaddr,amount,fee,nonce, remark,pri,pub,contractAddress)
+			console.log("...sign..."+res_2)
+		}
+		
+	</script>
+</head>
+<body>
+	<button class="btn generate" onclick="create()">create</button>
+	
+   
+</body>
+
+
+
+</html>
